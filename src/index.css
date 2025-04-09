@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -97,5 +98,184 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Arial', sans-serif;
+  }
+}
+
+/* Invoice Styles */
+.invoice-container {
+  max-width: 210mm; /* A4 width */
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.invoice {
+  padding: 20px;
+}
+
+.invoice-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.invoice-title h1 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.invoice-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.company-details, .invoice-details {
+  flex: 1;
+  min-width: 250px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.work-description {
+  margin-bottom: 30px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+table th {
+  background-color: #f8f8f8;
+  font-weight: bold;
+}
+
+table textarea, table input {
+  border: none;
+  background: transparent;
+  width: 100%;
+  padding: 5px;
+}
+
+.amount, .subtotal-amount {
+  text-align: right;
+  font-weight: bold;
+}
+
+.subtotal-label {
+  text-align: right;
+  font-weight: bold;
+}
+
+.table-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-item-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.remove-btn {
+  background-color: #f44336;
+  color: white;
+  padding: 5px 10px;
+}
+
+.print-section {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.print-btn {
+  background-color: #2196f3;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+/* Print styles */
+@media print {
+  body {
+    background-color: white;
+  }
+  
+  .invoice-container {
+    box-shadow: none;
+    padding: 0;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
+  
+  .invoice {
+    padding: 0;
+  }
+  
+  @page {
+    size: A4;
+    margin: 1cm;
+  }
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .invoice-header {
+    flex-direction: column;
+  }
+  
+  table {
+    font-size: 14px;
+  }
+  
+  .invoice-container {
+    padding: 10px;
+  }
+  
+  .invoice {
+    padding: 10px;
   }
 }
